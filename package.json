@@ -24,7 +24,7 @@
     "m:revert": "ts-node node_modules/.bin/typeorm migration:revert --config ./orm.config.json"
   },
   "dependencies": {
-    "@nestjs/common": "^8.0.0",
+    "@nestjs/common": "^8.1.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/jwt": "^8.0.0",
     "@nestjs/passport": "^8.0.1",

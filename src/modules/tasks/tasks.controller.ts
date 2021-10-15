@@ -49,6 +49,9 @@ export class TasksController {
     @Param('id', ParseIntPipe) id: number,
     @GetUser() user: User,
   ): Promise<Task> {
+    this.logger.verbose(
+      `Getting task with id: "${id}" for user: "${user.username}"`,
+    );
     return this.tasksService.getById(id, user);
   }
 
@@ -71,6 +74,9 @@ export class TasksController {
     @Param('id', ParseIntPipe) id: number,
     @GetUser() user: User,
   ): Promise<void> {
+    this.logger.verbose(
+      `Deleting task with id: "${id}" for user: "${user.username}"`,
+    );
     return this.tasksService.delete(id, user);
   }
 
@@ -81,6 +87,9 @@ export class TasksController {
     @Body() updateTaskDto: UpdateTaskDto,
     @GetUser() user: User,
   ) {
+    this.logger.verbose(
+      `Updating task with id: "${id}" for user: "${user.username}"`,
+    );
     return this.tasksService.update(id, updateTaskDto, user);
   }
 }
